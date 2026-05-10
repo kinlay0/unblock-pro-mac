@@ -629,7 +629,7 @@ document.getElementById('tgLink')?.addEventListener('click', (e) => {
 });
 
 document.getElementById('promoBtn')?.addEventListener('click', () => {
-  window.api.openExternal('https://t.me/bysonicvpn_bot');
+  window.api.openExternal('https://t.me/rosevpnru_bot');
 });
 
 // ============= Custom Domains =============
