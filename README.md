@@ -7,26 +7,6 @@
   Разблокируй Discord, YouTube и другие сервисы в один клик
 </p>
 
-<p align="center">
-  <a href="https://github.com/by-sonic/unblock-pro/releases/latest"><img src="https://img.shields.io/github/v/release/by-sonic/unblock-pro?style=for-the-badge&color=blue&label=version" alt="Version"></a>
-  <a href="https://github.com/by-sonic/unblock-pro/releases/latest"><img src="https://img.shields.io/github/downloads/by-sonic/unblock-pro/total?style=for-the-badge&color=green&label=downloads" alt="Downloads"></a>
-  <a href="https://github.com/by-sonic/unblock-pro/blob/main/LICENSE"><img src="https://img.shields.io/github/license/by-sonic/unblock-pro?style=for-the-badge&color=purple" alt="License"></a>
-  <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows-blue?style=for-the-badge" alt="Platform">
-</p>
-
----
-
-## Скачать
-
-| Платформа | Файл | Описание |
-|-----------|------|----------|
-| **macOS** Apple Silicon (M1/M2/M3/M4) | [UnblockPro-mac-arm64.zip](https://github.com/by-sonic/unblock-pro/releases/latest) | Для Mac с M-процессором |
-| **macOS** Intel | [UnblockPro-mac-x64.zip](https://github.com/by-sonic/unblock-pro/releases/latest) | Для Mac с Intel |
-| **Windows** | [UnblockPro-win-setup.exe](https://github.com/by-sonic/unblock-pro/releases/latest) | Установщик |
-| **Windows** | [UnblockPro-win-portable.exe](https://github.com/by-sonic/unblock-pro/releases/latest) | Портативная версия (без установки) |
-
-> Перейдите в [Releases](https://github.com/by-sonic/unblock-pro/releases/latest) и скачайте версию для вашей ОС
-
 ---
 
 ## Что это?
@@ -63,7 +43,7 @@ UnblockPro использует технологию [zapret](https://github.com
 
 ### macOS
 
-1. Скачайте `UnblockPro-*-mac.zip` из [Releases](https://github.com/by-sonic/unblock-pro/releases/latest)
+1. Скачайте `UnblockPro-*-mac.zip` из Releases
 2. Распакуйте ZIP и перетащите `UnblockPro.app` в папку «Программы»
 3. **Откройте Терминал** и выполните команду:
 
@@ -74,24 +54,6 @@ xattr -cr /Applications/UnblockPro.app
 4. Запустите приложение и нажмите «Подключить»
 
 > **Зачем нужна команда?** macOS блокирует приложения без платной подписи Apple Developer ($99/год). Команда `xattr -cr` снимает карантинный флаг — это безопасно, код проекта полностью открыт. Работает на Intel и Apple Silicon (M1/M2/M3).
-
-### Windows
-
-1. Скачайте установщик или портативную версию из [Releases](https://github.com/by-sonic/unblock-pro/releases/latest)
-2. Запустите от имени администратора
-3. Нажмите «Подключить»
-
-> **Важно:** На Windows требуются права администратора для работы WinDivert
-
----
-
-## Скриншоты
-
-<p align="center">
-  <em>Главный экран — статус подключения, управление в один клик</em>
-</p>
-
----
 
 ## FAQ
 
