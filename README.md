@@ -1,16 +1,3 @@
-<!-- ROSEVPN-BANNER-START -->
-<p align="center">
-  <a href="https://t.me/rosevpnru_bot">
-    <img alt="RoseVPN — быстрый VPN" src="https://img.shields.io/badge/%F0%9F%8C%B9%20RoseVPN-%D0%9F%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20Telegram-E63946?style=for-the-badge&logo=telegram&logoColor=white&labelColor=1a1a1a" height="40"/>
-  </a>
-</p>
-<p align="center">
-  <sub><b>Быстрый VPN с обходом YouTube, Discord, Instagram</b> · Бесплатный пробный период · Подключение за 30 секунд через бот <a href="https://t.me/rosevpnru_bot">@rosevpnru_bot</a></sub>
-</p>
-
----
-
-<!-- ROSEVPN-BANNER-END -->
 
 # UnblockPro — Обход блокировок Discord и YouTube
 
@@ -188,7 +175,3 @@ npm run build:win
 </p>
 
 ---
-
-### Ключевые слова / Keywords
-
-> discord разблокировка, youtube разблокировка, обход блокировки discord, обход блокировки youtube, dpi bypass, антиблокировка, разблокировать дискорд, discord россия, youtube россия, zapret gui, обход dpi, discord unblock russia, youtube unblock russia, anti dpi, bypass discord block, unblock discord, unblock youtube
