@@ -628,10 +628,6 @@ document.getElementById('tgLink')?.addEventListener('click', (e) => {
   window.api.openExternal('https://t.me/bysonicx');
 });
 
-document.getElementById('promoBtn')?.addEventListener('click', () => {
-  window.api.openExternal('https://t.me/rosevpnru_bot');
-});
-
 // ============= Custom Domains =============
 
 async function loadCustomDomains() {

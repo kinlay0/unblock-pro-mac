@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const ZAPRET_VERSION = 'v72.9';
+const ZAPRET_VERSION = 'v72.12';
 const ZAPRET_RELEASE_URL = `https://github.com/bol-van/zapret/releases/download/${ZAPRET_VERSION}`;
 
 const BINARIES = {

@@ -60,7 +60,10 @@ const IPSET_EXCLUDE = [
   '::1', 'fc00::/7', 'fe80::/10'
 ].join('\n');
 
-const IPSET_ALL = '203.0.113.113/32';
+const IPSET_ALL = fs.readFileSync(
+  path.join(listsDir, 'ipset-all.txt'),
+  'utf8'
+);
 
 fs.writeFileSync(path.join(listsDir, 'list-general.txt'), HOST_LIST_GENERAL, 'utf8');
 fs.writeFileSync(path.join(listsDir, 'list-google.txt'), HOST_LIST_GOOGLE, 'utf8');
@@ -74,3 +77,4 @@ fs.writeFileSync(path.join(listsDir, 'list-all.txt'), all, 'utf8');
 
 console.log('Lists generated in', listsDir);
 console.log('Files:', fs.readdirSync(listsDir).join(', '));
+console.log('ipset-all.txt загружен');
