@@ -101,59 +101,8 @@ jobs:
             dist/*.blockmap
           retention-days: 5
 
-  build-windows:
-    runs-on: windows-latest
-    needs: [prepare]
-    if: needs.prepare.outputs.should_build == 'true'
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref == 'refs/heads/main' && 'main' || github.ref }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: 'npm'
-
-      - name: Install dependencies
-        uses: nick-fields/retry@v3
-        with:
-          timeout_minutes: 5
-          max_attempts: 3
-          retry_wait_seconds: 30
-          command: npm ci
-
-      - name: Create bin directory
-        run: mkdir bin\win32
-        shell: cmd
-
-      - name: Build Windows
-        uses: nick-fields/retry@v3
-        with:
-          timeout_minutes: 15
-          max_attempts: 3
-          retry_wait_seconds: 10
-          command: npm run build:win
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Remove debug files
-        run: del dist\builder-debug.yml 2>nul || true
-        shell: cmd
-
-      - name: Upload Windows artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: win-build
-          path: |
-            dist/*.exe
-            dist/*.yml
-            dist/*.blockmap
-          retention-days: 5
-
   release:
-    needs: [build-mac, build-windows, prepare]
+    needs: [build-mac, prepare]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -165,12 +114,6 @@ jobs:
         with:
           name: mac-build
           path: artifacts/mac
-
-      - name: Download Windows artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: win-build
-          path: artifacts/win
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
@@ -186,8 +129,6 @@ jobs:
             |-----------|------|----------|
             | **macOS** Apple Silicon (M1/M2/M3/M4) | `UnblockPro-*-mac-arm64.zip` | Для Mac с M-процессором |
             | **macOS** Intel | `UnblockPro-*-mac-x64.zip` | Для Mac с Intel |
-            | **Windows** | `UnblockPro-*-win-setup.exe` | Установщик |
-            | **Windows** | `UnblockPro-*-win-portable.exe` | Портативная версия |
             
             ### macOS — первый запуск
             
@@ -196,12 +137,9 @@ jobs:
             xattr -cr /Applications/UnblockPro.app
             ```
             
-            ---
-            **by sonic**
           draft: false
           prerelease: false
           files: |
             artifacts/mac/**/*
-            artifacts/win/**/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
